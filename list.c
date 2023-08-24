@@ -37,15 +37,6 @@ List * createList() {
 }
 
 void * firstList(List * list, int x) {
-  x.next =   List.head;
-  if List.head != NULL
-    {
-    List.head.prev = x;
-    }
-  List.head = x;
-  x.prev = NULL;
-  return NULL;
-  
 }
 
 void * nextList(List * list) {

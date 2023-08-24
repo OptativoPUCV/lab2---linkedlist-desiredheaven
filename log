@@ -292,3 +292,47 @@ list.c:40:1: error: control reaches end of non-void function [-Werror=return-typ
 cc1: all warnings being treated as errors
 Compilation failed
 c57e287
+Thu 24 Aug 2023 07:59:37 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:34:9: error: expected identifier before ‘(’ token
+   34 |   list->((sizeof(List))=0;
+      |         ^
+test.c: In function ‘test_first_next’:
+test.c:107:17: error: ‘msg’ undeclared (first use in this function)
+  107 |         sprintf(msg,"firstList retorna %d",*j);
+      |                 ^~~
+test.c:107:17: note: each undeclared identifier is reported only once for each function it appears in
+test.c: In function ‘test_last_prev’:
+test.c:180:17: error: ‘msg’ undeclared (first use in this function)
+  180 |         sprintf(msg,"lastList retorna %d",*j);
+      |                 ^~~
+test.c: In function ‘test_pushfront’:
+test.c:240:13: error: ‘msg’ undeclared (first use in this function)
+  240 |     sprintf(msg, "Insertando %d a la lista (pushfront)",*j);
+      |             ^~~
+test.c: In function ‘test_pushcurrent’:
+test.c:307:13: error: ‘msg’ undeclared (first use in this function)
+  307 |     sprintf(msg, "pushFront(%d)",*j);
+      |             ^~~
+test.c: In function ‘test_popcurrent’:
+test.c:381:17: error: ‘msg’ undeclared (first use in this function)
+  381 |         sprintf(msg,"PopCurrent retorna %d",*k);
+      |                 ^~~
+test.c: In function ‘createList’:
+test.c:448:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  448 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:468:1: error: expected declaration or statement at end of input
+  468 | }
+      | ^
+test.c:469: error: control reaches end of non-void function [-Werror=return-type]
+At top level:
+test.c:448:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  448 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+14c251b

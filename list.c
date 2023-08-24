@@ -29,11 +29,23 @@ Node * createNode(void * data) {
 }
 
 List * createList() {
-     return NULL;
+  List*list=(List*) malloc (sizeof(List));
+  list->head = NULL;
+  list->size=0;
+  list->current=NULL;
+  return list;
 }
 
-void * firstList(List * list) {
-    return NULL;
+void * firstList(List * list, int x) {
+  x.next =   List.head;
+  if List.head != NULL
+    {
+    List.head.prev = x;
+    }
+  List.head = x;
+  x.prev = NULL;
+  return NULL;
+  
 }
 
 void * nextList(List * list) {
@@ -49,6 +61,15 @@ void * prevList(List * list) {
 }
 
 void pushFront(List * list, void * data) {
+  Node* n= createNode(data);
+  n->next= list->head;
+  if(list->head)
+  {
+    list->head->prev = n;
+  }
+  list->head = n;
+  n->prev=NULL;
+  list->size++;
 }
 
 void pushBack(List * list, void * data) {

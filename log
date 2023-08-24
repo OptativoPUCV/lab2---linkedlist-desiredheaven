@@ -738,3 +738,9 @@ list.c:61:34: error: ‘Node’ has no member named ‘tail’
       |                                  ^~
 Compilation failed
 1ac3ff3
+Thu 24 Aug 2023 08:50:36 PM UTC: 
+ list.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  6|4
+total_score: 25/70
+aa65846

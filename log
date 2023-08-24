@@ -51,3 +51,54 @@ list.c:39:8: note: declared here
       |        ^~~~~~~~~
 Compilation failed
 18df9f2
+Thu 24 Aug 2023 07:53:43 PM UTC: 
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:34:7: error: ‘List’ {aka ‘struct List’} has no member named ‘size’
+   34 |   list->size=0;
+      |       ^~
+list.c: At top level:
+list.c:39:8: error: conflicting types for ‘firstList’; have ‘void *(List *, int)’ {aka ‘void *(struct List *, int)’}
+   39 | void * firstList(List * list, int x) {
+      |        ^~~~~~~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:8:8: note: previous declaration of ‘firstList’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+    8 | void * firstList(List * list);
+      |        ^~~~~~~~~
+In file included from test.c:5:
+list.c: In function ‘firstList’:
+list.c:40:4: error: request for member ‘next’ in something not a structure or union
+   40 |   x.next =   List.head;
+      |    ^
+list.c:40:14: error: expected expression before ‘List’
+   40 |   x.next =   List.head;
+      |              ^~~~
+list.c:41:6: error: expected ‘(’ before ‘List’
+   41 |   if List.head != NULL
+      |      ^~~~
+      |      (
+list.c:46:4: error: request for member ‘prev’ in something not a structure or union
+   46 |   x.prev = NULL;
+      |    ^
+list.c: In function ‘pushFront’:
+list.c:72:7: error: ‘List’ {aka ‘struct List’} has no member named ‘size’
+   72 |   list->size++;
+      |       ^~
+test.c: In function ‘test_first_next’:
+test.c:101:13: error: too few arguments to function ‘firstList’
+  101 |     int*j = firstList(L);
+      |             ^~~~~~~~~
+In file included from test.c:5:
+list.c:39:8: note: declared here
+   39 | void * firstList(List * list, int x) {
+      |        ^~~~~~~~~
+test.c:122:9: error: too few arguments to function ‘firstList’
+  122 |     j = firstList(L);
+      |         ^~~~~~~~~
+In file included from test.c:5:
+list.c:39:8: note: declared here
+   39 | void * firstList(List * list, int x) {
+      |        ^~~~~~~~~
+Compilation failed
+c6d2aee

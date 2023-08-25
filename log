@@ -1173,3 +1173,30 @@ list.c:153:1: error: expected identifier or ‘(’ before ‘}’ token
 cc1: all warnings being treated as errors
 Compilation failed
 065ccd3
+Fri 25 Aug 2023 01:34:44 AM UTC: 
+ list.c | 17 ++++++++++++-----
+ 1 file changed, 12 insertions(+), 5 deletions(-)
+In file included from test.c:5:
+list.c:157:16: error: ‘n’ undeclared here (not in a function)
+  157 |   void *data = n ->data;
+      |                ^
+list.c:158:3: error: data definition has no type or storage class [-Werror]
+  158 |   free(n);
+      |   ^~~~
+list.c:158:3: error: type defaults to ‘int’ in declaration of ‘free’ [-Werror=implicit-int]
+list.c:158:3: error: parameter names (without types) in function declaration [-Werror]
+list.c:158:3: error: conflicting types for ‘free’; have ‘int()’
+In file included from test.c:2:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdlib.h:555:13: note: previous declaration of ‘free’ with type ‘void(void *)’
+  555 | extern void free (void *__ptr) __THROW;
+      |             ^~~~
+In file included from test.c:5:
+list.c:159:3: error: expected identifier or ‘(’ before ‘return’
+  159 |   return data;
+      |   ^~~~~~
+list.c:160:1: error: expected identifier or ‘(’ before ‘}’ token
+  160 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+ab211d7

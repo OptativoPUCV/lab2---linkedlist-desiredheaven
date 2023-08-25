@@ -1146,3 +1146,30 @@ list.c:147:16: error: ‘n’ undeclared (first use in this function)
 list.c:147:16: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 1c67253
+Fri 25 Aug 2023 01:33:13 AM UTC: 
+ list.c | 23 +++++++++++++----------
+ 1 file changed, 13 insertions(+), 10 deletions(-)
+In file included from test.c:5:
+list.c:150:16: error: ‘n’ undeclared here (not in a function)
+  150 |   void *data = n ->data;
+      |                ^
+list.c:151:3: error: data definition has no type or storage class [-Werror]
+  151 |   free(n);
+      |   ^~~~
+list.c:151:3: error: type defaults to ‘int’ in declaration of ‘free’ [-Werror=implicit-int]
+list.c:151:3: error: parameter names (without types) in function declaration [-Werror]
+list.c:151:3: error: conflicting types for ‘free’; have ‘int()’
+In file included from test.c:2:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdlib.h:555:13: note: previous declaration of ‘free’ with type ‘void(void *)’
+  555 | extern void free (void *__ptr) __THROW;
+      |             ^~~~
+In file included from test.c:5:
+list.c:152:3: error: expected identifier or ‘(’ before ‘return’
+  152 |   return data;
+      |   ^~~~~~
+list.c:153:1: error: expected identifier or ‘(’ before ‘}’ token
+  153 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+065ccd3

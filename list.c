@@ -124,8 +124,8 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
+  Node *n = list->current;
   if(list->current != NULL ){
-    Node *n = list->current;
 
     if (n->prev !=NULL)
     {
@@ -144,7 +144,7 @@ void * popCurrent(List * list) {
       list->tail = n->prev;
     }
   }
-  void *data = n ->data;
+  void *data = n->data;
   free(n);
   return data;
 }

@@ -966,3 +966,32 @@ list.c:99:1: error: expected expression before ‘}’ token
       | ^
 Compilation failed
 96f50b3
+Fri 25 Aug 2023 12:54:38 AM UTC: 
+ list.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+In file included from test.c:5:
+list.c: In function ‘pushCurrent’:
+list.c:99:5: error: expected expression before ‘Node’
+   99 |     Node *dato = createNode(n);
+      |     ^~~~
+list.c:100:3: error: ‘n’ undeclared (first use in this function)
+  100 |   n->prev= list->current;
+      |   ^
+list.c:100:3: note: each undeclared identifier is reported only once for each function it appears in
+list.c:105:3: error: expected ‘}’ before ‘else’
+  105 |   else{
+      |   ^~~~
+list.c:106:16: error: ‘dato’ undeclared (first use in this function); did you mean ‘data’?
+  106 |     list->tail=dato;
+      |                ^~~~
+      |                data
+list.c:108:9: error: ‘List’ {aka ‘struct List’} has no member named ‘curent’; did you mean ‘current’?
+  108 |   list->curent->next=n;
+      |         ^~~~~~
+      |         current
+list.c: At top level:
+list.c:110:1: error: expected identifier or ‘(’ before ‘}’ token
+  110 | }
+      | ^
+Compilation failed
+9e093bd

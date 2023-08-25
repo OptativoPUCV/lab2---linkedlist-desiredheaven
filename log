@@ -1200,3 +1200,14 @@ list.c:160:1: error: expected identifier or ‘(’ before ‘}’ token
 cc1: all warnings being treated as errors
 Compilation failed
 ab211d7
+Fri 25 Aug 2023 01:35:58 AM UTC: 
+ list.c | 11 +----------
+ 1 file changed, 1 insertion(+), 10 deletions(-)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:147:16: error: ‘n’ undeclared (first use in this function)
+  147 |   void *data = n ->data;
+      |                ^
+list.c:147:16: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+3b245c0

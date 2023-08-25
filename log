@@ -1087,3 +1087,18 @@ list.c:110:2: error: expected identifier or ‘(’ before ‘}’ token
       |  ^
 Compilation failed
 14e4881
+Fri 25 Aug 2023 12:56:48 AM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘pushCurrent’:
+list.c:104:31: error: ‘n’ undeclared (first use in this function)
+  104 |     list->current->next->prev=n;
+      |                               ^
+list.c:104:31: note: each undeclared identifier is reported only once for each function it appears in
+list.c: At top level:
+list.c:110:2: error: expected identifier or ‘(’ before ‘}’ token
+  110 | }}
+      |  ^
+Compilation failed
+1a845ed

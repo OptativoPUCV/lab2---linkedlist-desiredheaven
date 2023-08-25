@@ -107,7 +107,7 @@ void pushCurrent(List * list, void * data) {
     list->tail=n;
   }
   list->current->next=n;
-}}
+}
 
 
 void * popFront(List * list) {

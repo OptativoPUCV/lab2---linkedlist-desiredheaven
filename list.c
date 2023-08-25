@@ -124,6 +124,7 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
+  if(list->current )
     return NULL;
 }
 

@@ -1068,3 +1068,22 @@ list.c:110:1: error: expected identifier or ‘(’ before ‘}’ token
       | ^
 Compilation failed
 c62205e
+Fri 25 Aug 2023 12:56:21 AM UTC: 
+ list.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+list.c: In function ‘pushCurrent’:
+list.c:104:31: error: ‘n’ undeclared (first use in this function)
+  104 |     list->current->next->prev=n;
+      |                               ^
+list.c:104:31: note: each undeclared identifier is reported only once for each function it appears in
+list.c:109:9: error: ‘List’ {aka ‘struct List’} has no member named ‘curent’; did you mean ‘current’?
+  109 |   list->curent->next=n;
+      |         ^~~~~~
+      |         current
+list.c: At top level:
+list.c:110:2: error: expected identifier or ‘(’ before ‘}’ token
+  110 | }}
+      |  ^
+Compilation failed
+14e4881
